@@ -12,7 +12,7 @@ and generated [relevant Swagger docs](http://www.mingweisamuel.com/lcu-schema/to
 Using these community-created tools, `lol-statlonger` is an interface to interact with the chat status API so that **you don't have to mess with any code.**
 
 # Installation
-Simply grab the zip from the "Releases" tab above and click on the .exe file once extracted. It should be pretty straightforward from that point on.
+Simply grab the zip from the ["Releases" tab](https://github.com/aaronkh/lol-statlonger/releases) above and click on the .exe file once extracted. It should be pretty straightforward from that point on.
 Note that there is a *soft* limit on how many characters your status can be; I found that, at about 1500 characters, the friends list does not stay connected. 
 At roughly 2000 characters, the friends list does not load at all. So please be reasonable!
 
