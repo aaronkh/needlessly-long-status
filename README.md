@@ -2,7 +2,7 @@
 Set your League status to anything!
 
 Some of y'all were asking how I got my League status so loooonnnnggg. Well, the short answer is through some ✨\*code magic\*✨. 
-Long answer is by using the hidden api's built into the League client to bypass the client-side limit on the status text.
+Long answer is by using the hidden API's built into the League client to bypass the client-side limit on the status text.
 
 When the League client runs, it exposes a server and an API (known as the LCU API) such that each individual part can communicate with each other seamlessly (barring the 
 *very* well-documented client bugs). This fact has been known since the [rewrite in 2016](https://technology.riotgames.com/news/architecture-league-client-update). 
@@ -19,5 +19,6 @@ At roughly 2000 characters, the friends list does not load at all. So please be 
 ```
 - I claim no responsbility for any damage to your League client, your computer, or yourself. Use this tool at your own discretion. 
 - Please pardon any bugs; I wrote this at 3AM. 
+- Created with Electron/Node.js and as few other JS libraries as possible
 - If anyone plays League on a Mac and/or wants to volunteer to test or build, feel free to drop a pull request or add me on league at Ieaverbuster.
 ```
