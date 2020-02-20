@@ -1,0 +1,27 @@
+{
+  "name": "lol-statlonger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronkh/lol-statlonger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronkh/lol-statlonger/issues"
+  },
+  "homepage": "https://github.com/aaronkh/lol-statlonger#readme",
+  "dependencies": {
+    "@material/textfield": "^5.0.0",
+    "electron": "^8.0.1",
+    "lcu-connector": "^2.1.3",
+    "node-fetch": "^2.6.0",
+    "open": "^7.0.2"
+  }
+}
