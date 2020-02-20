@@ -65,35 +65,38 @@
             padding: 16px;
             justify-content: center;
         }
-	#text-field {
-	    background: transparent;
-	    color: inherit;
-	    padding: 8px;
-	    margin: 16px;
-	    margin-top: 0;
-	    border-radius: 4px;
-	    border: 1px solid rgba(255, 255, 255, 0.5);
-	    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+
+        #text-field {
+            background: transparent;
+            color: inherit;
+            padding: 8px;
+            margin: 16px;
+            margin-top: 0;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
             -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
             outline: none !important;
-	    font-family: inherit;
-	    resize: none;
-	    height: 100%;
-	}
-	#button {
-	    background: var(--red); 
-	    cursor: pointer;
-	    align-self: center;
-	    padding: 8px;
-	    border-radius: 32px;
-	    padding-right: 32px;
-	    padding-left: 32px;
-	    text-align: center;
-	}
-	#button.disabled {
-	    background: grey;
-	    cursor: not-allowed;
-	}
+            font-family: inherit;
+            resize: none;
+            height: 100%;
+        }
+
+        #button {
+            background: var(--red);
+            cursor: pointer;
+            align-self: center;
+            padding: 8px;
+            border-radius: 32px;
+            padding-right: 32px;
+            padding-left: 32px;
+            text-align: center;
+        }
+
+        #button.disabled {
+            background: grey;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 
@@ -108,37 +111,37 @@
     </div>
     <h1 style="padding-left: 16px"> Enter your status below... </h1>
     <div style="flex-grow: 1; flex-direction: column">
-	    <textarea name="text" id="text-field" placeholder="Type here!"></textarea>
+        <textarea name="text" id="text-field" placeholder="Type here!"></textarea>
     </div>
-	    <div id="button" class="disabled" title="Waiting to connect to your client...">send</div>
+    <div id="button" class="disabled" title="Waiting to connect to your client...">send</div>
     <div id="about"><a href="https://www.github.com/aaronkh/lol-statlonger">about</a></div>
     <script>
         const ipc = require('electron').ipcRenderer
         const { remote } = require('electron')
         const { BrowserWindow } = remote
         const minimizeButton = document.getElementById('minimize')
-	const closeButton = document.getElementById('close')
-	const sendButton = document.getElementById('button')
-	let isEnabled = true
+        const closeButton = document.getElementById('close')
+        const sendButton = document.getElementById('button')
+        let isEnabled = true
 
         minimizeButton.addEventListener('click', () => BrowserWindow.getFocusedWindow().minimize())
         closeButton.addEventListener('click', close)
-        
-	ipc.on('ready', (e, d) => {
-		isEnabled = d
-		if(d) {
-		    document.getElementById('button').classList.remove('disabled')
-		    document.getElementById('button').setAttribute('title', 'Press me to set your status!')
-		} else {
-		    document.getElementById('button').classList.add('disabled')
-		    document.getElementById('button').setAttribute('title', 'Not connected to your client!')
-		}
-	})	
-sendButton.addEventListener('click', () =>{ 
-	if(isEnabled)
-		ipc.send('message', document.getElementById('text-field').value)
 
-	})
+        ipc.on('ready', (e, d) => {
+            isEnabled = d
+            if (d) {
+                document.getElementById('button').classList.remove('disabled')
+                document.getElementById('button').setAttribute('title', 'Press me to set your status!')
+            } else {
+                document.getElementById('button').classList.add('disabled')
+                document.getElementById('button').setAttribute('title', 'Not connected to your client!')
+            }
+        })
+        sendButton.addEventListener('click', () => {
+            if (isEnabled)
+                ipc.send('message', document.getElementById('text-field').value)
+
+        })
         function close() {
             ipc.send('close')
         }

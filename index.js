@@ -13,12 +13,12 @@ const api = {}
 let win = null
 
 connector.on('connect', (d) => {
-	Object.assign(api, d)
-	win.send('ready', true)
+    Object.assign(api, d)
+    win.send('ready', true)
 })
 connector.on('disconnect', () => {
-	Object.assign(api, {})
-	win.send('ready', false)
+    Object.assign(api, {})
+    win.send('ready', false)
 })
 
 const getURL = path => `${api.protocol}://${api.address}:${api.port}${path}`
@@ -26,16 +26,16 @@ const getURL = path => `${api.protocol}://${api.address}:${api.port}${path}`
 const auth = s => 'Basic ' + Buffer.from(s).toString('base64')
 
 const setStatus = (statusMessage) => {
-	const url = getURL('/lol-chat/v1/me')
-	return fetch(url, {
-		method: 'PUT', 
-		headers: {
-			'Accept': 'application/json',
-			'Content-Type': 'application/json',
-			'Authorization': auth(`${api.username}:${api.password}`)
-		},
-		body: JSON.stringify({statusMessage})
-	})
+    const url = getURL('/lol-chat/v1/me')
+    return fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': auth(`${api.username}:${api.password}`)
+        },
+        body: JSON.stringify({ statusMessage })
+    })
 }
 
 app.whenReady().then(async () => {
@@ -52,7 +52,7 @@ app.whenReady().then(async () => {
         frame: false,
         movable: true,
         autoHideMenuBar: true,
-	title: 'lol-statlonger',
+        title: 'lol-statlonger',
     })
     win.loadFile('index.html')
     connector.start()
@@ -85,9 +85,9 @@ app.on('web-contents-created', (e, contents) => {
 });
 
 ipc.on('message', (e, d) => {
-	setStatus(d)
-		.then(() => e.sender.send(true))
-		.catch(() => e.sender.send(false))
+    setStatus(d)
+        .then(() => e.sender.send(true))
+        .catch(() => e.sender.send(false))
 
 })
 
