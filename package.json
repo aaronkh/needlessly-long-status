@@ -1,24 +1,24 @@
 {
-  "name": "lol-statlonger",
+  "name": "needlessly-long-status",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron index.js",
-    "build": "electron-packager ./ lol-statlonger"
+    "build": "electron-packager ./ needlessly-long-status --out=build"
 
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaronkh/lol-statlonger.git"
+    "url": "git+https://github.com/aaronkh/needlessly-long-status.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aaronkh/lol-statlonger/issues"
+    "url": "https://github.com/aaronkh/needlessly-long-status/issues"
   },
-  "homepage": "https://github.com/aaronkh/lol-statlonger#readme",
+  "homepage": "https://github.com/aaronkh/needlessly-long-status#readme",
   "dependencies": {
     "electron": "^8.0.1",
     "lcu-connector": "^2.1.3",
