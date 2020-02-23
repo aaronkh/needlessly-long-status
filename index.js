@@ -61,18 +61,6 @@ app.whenReady().then(async () => {
     })
 })
 
-app.requestSingleInstanceLock()
-
-app.on('second-instance', function () {
-    // Someone tried to run a second instance, we should focus our window.
-    if (win) {
-        if (win.isMinimized()) win.restore();
-        win.focus();
-    }
-})
-
-
-
 // opens links in a browser instead of in app
 app.on('web-contents-created', (e, contents) => {
     contents.on('new-window', (e, url) => {
