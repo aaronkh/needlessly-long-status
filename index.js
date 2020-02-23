@@ -52,7 +52,7 @@ app.whenReady().then(async () => {
         frame: false,
         movable: true,
         autoHideMenuBar: true,
-        title: 'lol-statlonger',
+        title: 'needlessly-long-status',
     })
     win.loadFile('index.html')
     connector.start()
@@ -86,8 +86,8 @@ app.on('web-contents-created', (e, contents) => {
 
 ipc.on('message', (e, d) => {
     setStatus(d)
-        .then(() => e.sender.send(true))
-        .catch(() => e.sender.send(false))
+        .then(() => e.sender.send('message', true))
+        .catch(() => e.sender.send('message', false))
 
 })
 

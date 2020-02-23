@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron index.js",
-    "build": "electron-packager ./ needlessly-long-status --out=build"
-
+    "build": "electron-packager ./ needlessly-long-status --out=build --overwrite"
   },
   "repository": {
     "type": "git",
