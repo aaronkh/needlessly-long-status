@@ -12,12 +12,13 @@ and generated [relevant Swagger docs](http://www.mingweisamuel.com/lcu-schema/to
 Using these community-created tools, `needlessly-long-status` is an interface to interact with the chat status API so that **you don't have to mess with any code.**
 
 # Installation
-Simply grab the zip from the ["Releases" tab](https://github.com/aaronkh/needlessly-long-status/releases) above and click on the .exe file once extracted. It should be pretty straightforward from that point on.
+Simply grab the [newest release (click me)](https://github.com/aaronkh/needlessly-long-status/releases/download/1.1/needlessly-long-status-win32-x64.zip) above and click on `the needlessly-long-status.exe` file once extracted. It should be pretty straightforward from that point on.
 Note that there is a *soft* limit on how many characters your status can be; I found that, at about 1500 characters, the friends list does not stay connected. 
 At roughly 2000 characters, the friends list does not load at all. So please be reasonable!
 
 ```
 - I claim no responsbility for any damage to your League client, your computer, or yourself. Use this tool at your own discretion. 
-- Created with Electron/Node.js and as few other JS libraries as possible
+- Created with Electron/Node.js and as few other JS libraries as possible.
+- You may have to restart your client before it works.
 - If anyone plays League on a Mac and/or wants to volunteer to test or build, feel free to drop a pull request or add me on league at Ieaverbuster.
 ```
